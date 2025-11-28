@@ -13,6 +13,22 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
+if (isset($_POST['service_name'])) {
+
+    $name = $_POST['service_name'];
+    $cost = $_POST['cost'];
+    $date = $_POST['service_date'];
+
+    
+    $sql = "INSERT INTO basic_log_v2 (service_name, cost, service_date)
+            VALUES ('$name', '$cost', '$date')";
+
+    mysqli_query($conn, $sql);
+
+    echo "<p>Service added successfully!</p>";
+}
+
+
 ?>
 
 
