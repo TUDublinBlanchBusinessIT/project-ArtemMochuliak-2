@@ -11,6 +11,19 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
+$search = "";
+$where = "";
+
+if (isset($_GET['search']) && $_GET['search'] !== "") {
+    $search = mysqli_real_escape_string($conn, $_GET['search']);
+    $where = "WHERE 
+                service_types.type_name LIKE '%$search%' OR
+                basic_log_v3.cost LIKE '%$search%' OR
+                basic_log_v3.service_date LIKE '%$search%' OR
+                basic_log_v3.id LIKE '%$search%'";
+}
+
+
 $sql = "
 SELECT 
     basic_log_v3.id,
@@ -20,7 +33,9 @@ SELECT
 FROM basic_log_v3
 JOIN service_types 
     ON basic_log_v3.service_type_id = service_types.id
+$where
 ";
+
 
 $result = mysqli_query($conn, $sql);
 ?>
