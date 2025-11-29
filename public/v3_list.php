@@ -24,7 +24,7 @@ JOIN service_types
 
 $result = mysqli_query($conn, $sql);
 
-$types = mysqli_query($conn, "SELECT * FROM service_types");
+
 ?>
 
 <h2>Service List (Version 3)</h2>
@@ -32,7 +32,7 @@ $types = mysqli_query($conn, "SELECT * FROM service_types");
 <table border="1">
     <tr>
         <th>ID</th>
-        <th>Service Type ID</th>
+        <th>Service Type</th>
         <th>Cost (€)</th>
         <th>Date</th>
     </tr>
@@ -40,7 +40,7 @@ $types = mysqli_query($conn, "SELECT * FROM service_types");
     <?php while ($row = mysqli_fetch_assoc($result)): ?>
         <tr>
             <td><?= $row['id'] ?></td>
-            <td><?= $row['service_type_id'] ?></td>
+            <td><?= $row['type_name'] ?></td>
             <td><?= $row['cost'] ?></td>
             <td><?= $row['service_date'] ?></td>
         </tr>
