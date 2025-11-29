@@ -42,7 +42,10 @@ $result = mysqli_query($conn, $sql);
             <td><?= $row['type_name'] ?></td>
             <td><?= $row['cost'] ?></td>
             <td><?= $row['service_date'] ?></td>
-            <td><a href="v5_delete.php?id=<?= $row['id'] ?>">Delete</a></td>
+            <td>
+                <a href="v6_edit.php?id=<?= $row['id'] ?>">Edit</a> | 
+                <a href="v5_delete.php?id=<?= $row['id'] ?>">Delete</a>
+            </td>
         </tr>
     <?php endwhile; ?>
 </table>
