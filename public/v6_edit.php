@@ -25,3 +25,33 @@ $record = mysqli_fetch_assoc($result);
 
 $types = mysqli_query($conn, "SELECT * FROM service_types");
 ?>
+
+<h2>Edit Service (Version 6)</h2>
+
+<form method="POST">
+    <input type="hidden" name="id" value="<?= $record['id'] ?>">
+
+    <label>Service Type:</label>
+    <select name="service_type_id" required>
+        <?php while ($row = mysqli_fetch_assoc($types)): ?>
+            <option value="<?= $row['id'] ?>"
+                <?= $row['id'] == $record['service_type_id'] ? 'selected' : '' ?>>
+                <?= $row['type_name'] ?>
+            </option>
+        <?php endwhile; ?>
+    </select>
+
+    <br><br>
+
+    <label>Cost (€):</label>
+    <input type="number" step="0.01" name="cost" value="<?= $record['cost'] ?>" required>
+
+    <br><br>
+
+    <label>Service Date:</label>
+    <input type="date" name="service_date" value="<?= $record['service_date'] ?>" required>
+
+    <br><br>
+
+    <button type="submit" name="update">Update</button>
+</form>
