@@ -17,6 +17,6 @@ $sql = "DELETE FROM basic_log_v3 WHERE id = $id";
 
 mysqli_query($conn, $sql);
 
-header("Location: v3_list.php");
+header("Location: v7_list.php");
 exit;
 ?>
