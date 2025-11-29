@@ -33,7 +33,7 @@ $result = mysqli_query($conn, $sql);
         <th>Service Type</th>
         <th>Cost (€)</th>
         <th>Date</th>
-        <th>Delete</th>
+        <th>Edit | Delete</th>
     </tr>
 
     <?php while ($row = mysqli_fetch_assoc($result)): ?>

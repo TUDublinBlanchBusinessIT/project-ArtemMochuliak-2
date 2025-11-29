@@ -11,6 +11,27 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
+if (isset($_POST['update'])) {
+
+    $id = $_POST['id'];
+    $type = $_POST['service_type_id'];
+    $cost = $_POST['cost'];
+    $date = $_POST['service_date'];
+
+    $sql = "
+    UPDATE basic_log_v3 
+    SET service_type_id = '$type',
+        cost = '$cost',
+        service_date = '$date'
+    WHERE id = $id
+    ";
+
+    mysqli_query($conn, $sql);
+
+    header("Location: v3_list.php");
+    exit;
+}
+
 $id = $_GET['id'];
 
 
