@@ -11,6 +11,20 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    $type_id = $_POST['service_type_id'];
+    $cost = $_POST['cost'];
+    $date = $_POST['service_date'];
+
+    $sql = "INSERT INTO basic_log_v3 (service_type_id, cost, service_date)
+            VALUES ('$type_id', '$cost', '$date')";
+
+    mysqli_query($conn, $sql);
+
+    echo "<p>Service added successfully!</p>";
+}
+
 $types = mysqli_query($conn, "SELECT * FROM service_types");
 ?>
 
