@@ -23,8 +23,6 @@ JOIN service_types
 ";
 
 $result = mysqli_query($conn, $sql);
-
-
 ?>
 
 <h2>Service List (Version 3)</h2>
@@ -35,6 +33,7 @@ $result = mysqli_query($conn, $sql);
         <th>Service Type</th>
         <th>Cost (€)</th>
         <th>Date</th>
+        <th>Delete</th>
     </tr>
 
     <?php while ($row = mysqli_fetch_assoc($result)): ?>
@@ -43,6 +42,7 @@ $result = mysqli_query($conn, $sql);
             <td><?= $row['type_name'] ?></td>
             <td><?= $row['cost'] ?></td>
             <td><?= $row['service_date'] ?></td>
+            <td><a href="v5_delete.php?id=<?= $row['id'] ?>">Delete</a></td>
         </tr>
     <?php endwhile; ?>
 </table>
