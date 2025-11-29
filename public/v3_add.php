@@ -10,6 +10,8 @@ $conn = mysqli_connect($servername, $username, $password, $dbname, $port);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
+
+$types = mysqli_query($conn, "SELECT * FROM service_types");
 ?>
 
 <h2>Add Service (Version 3)</h2>
