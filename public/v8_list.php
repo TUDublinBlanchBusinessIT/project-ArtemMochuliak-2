@@ -23,6 +23,15 @@ if (isset($_GET['search']) && $_GET['search'] !== "") {
                 basic_log_v3.id LIKE '%$search%'";
 }
 
+$from = isset($_GET['from_date']) ? $_GET['from_date'] : "";
+$to   = isset($_GET['to_date']) ? $_GET['to_date'] : "";
+
+if ($from !== "" && $to !== "") {
+    $where .= ($where === "" ? "WHERE " : " AND ") . 
+              "basic_log_v3.service_date BETWEEN '$from' AND '$to'";
+}
+
+
 
 $sql = "
 SELECT 
@@ -45,7 +54,7 @@ $result = mysqli_query($conn, $sql);
 <form method="GET">
     <input type="text" name="search" placeholder="Search..." 
            value="<?= isset($_GET['search']) ? $_GET['search'] : '' ?>">
-           
+
     From: <input type="date" name="from_date" 
             value="<?= isset($_GET['from_date']) ? $_GET['from_date'] : '' ?>">
 
