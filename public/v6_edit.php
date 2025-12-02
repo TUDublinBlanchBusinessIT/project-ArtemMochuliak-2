@@ -28,7 +28,7 @@ if (isset($_POST['update'])) {
 
     mysqli_query($conn, $sql);
 
-    header("Location: v7_list.php");
+    header("Location: v8_list.php");
     exit;
 }
 
