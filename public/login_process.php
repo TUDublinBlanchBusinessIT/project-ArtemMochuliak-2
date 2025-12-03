@@ -27,7 +27,7 @@ if (mysqli_num_rows($result) > 0) {
 
         $_SESSION['username'] = $row['username'];
 
-        header("Location: v8_list.php");
+        header("Location: v9_list.php");
         exit;
 
     } else {

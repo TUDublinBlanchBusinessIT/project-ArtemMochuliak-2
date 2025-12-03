@@ -81,4 +81,4 @@ $types = mysqli_query($conn, "SELECT * FROM service_types");
     <button type="submit">Add</button>
 </form>
 
-<a href="v8_list.php">View Services</a>
+<a href="v9_list.php">View Services</a>

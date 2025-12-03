@@ -13,10 +13,19 @@ class Service
         $this->date = $date;
     }
 
-    public function getSummary()
+    public function getServiceType()
     {
-        return "Service: " . $this->type . 
-               " | Cost: €" . $this->cost . 
-               " | Date: " . $this->date;
+        return $this->type;
     }
+
+    public function getServiceCost()
+    {
+        return $this->cost;
+    }
+
+    public function getServiceDate()
+    {
+        return $this->date;
+    }
+
 }
