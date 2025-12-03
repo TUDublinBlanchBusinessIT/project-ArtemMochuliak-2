@@ -4,6 +4,19 @@ if (!isset($_SESSION['username'])) {
     header("Location: login.php?msg=You must login first");
     exit;
 }
+
+if (!isset($_SESSION['lastAccessed'])) {
+    $_SESSION['lastAccessed'] = time();
+}
+
+if ($_SESSION['lastAccessed'] < (time() - 600)) {
+    session_destroy();
+    echo "Too long since this session was used – session timeout";
+    exit;
+} else {
+    $_SESSION['lastAccessed'] = time();
+}
+
 ?>
 
 <?php
