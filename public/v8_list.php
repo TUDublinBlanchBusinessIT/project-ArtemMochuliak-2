@@ -59,6 +59,10 @@ $result = mysqli_query($conn, $sql);
 
 <h2>Service List (Version 8)</h2>
 
+<a href="logout.php">Logout</a>
+<br>
+<br>
+
 <form method="GET">
     <input type="text" name="search" placeholder="Search..." 
            value="<?= isset($_GET['search']) ? $_GET['search'] : '' ?>">

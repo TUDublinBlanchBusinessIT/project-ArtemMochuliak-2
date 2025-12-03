@@ -38,6 +38,10 @@ $types = mysqli_query($conn, "SELECT * FROM service_types");
 
 <h2>Add Service (Version 3)</h2>
 
+<a href="logout.php">Logout</a>
+<br>
+<br>
+
 <form method="POST">
     <label>Service Type:</label>
     <select name="service_type_id" required>
