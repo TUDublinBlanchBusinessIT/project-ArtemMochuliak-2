@@ -7,4 +7,4 @@ or deleted.
 
 The application also includes a login system so that only authorised users can access the
 maintenance records. Sessions are used to keep the user logged in, and there is a timeout feature
-that logs the user out automatically after a period of inactivity.
+that logs the user out automatically after a period of inactivity. The system also includes search and filtering options to help users quickly find specific maintenance records.
