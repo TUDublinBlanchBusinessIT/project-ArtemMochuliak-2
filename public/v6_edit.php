@@ -68,7 +68,7 @@ $record = mysqli_fetch_assoc($result);
 $types = mysqli_query($conn, "SELECT * FROM service_types");
 ?>
 
-<h2>Edit Service (Version 6)</h2>
+<h2>Edit Service</h2>
 
 <a href="logout.php">Logout</a>
 <br>

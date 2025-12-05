@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 $types = mysqli_query($conn, "SELECT * FROM service_types");
 ?>
 
-<h2>Add Service (Version 3)</h2>
+<h2>Add Service</h2>
 
 <a href="logout.php">Logout</a>
 <br>

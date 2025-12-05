@@ -71,7 +71,7 @@ $where
 $result = mysqli_query($conn, $sql);
 ?>
 
-<h2>Service List (Version 9)</h2>
+<h2>Service List</h2>
 
 <a href="logout.php">Logout</a>
 <br>

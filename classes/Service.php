@@ -25,7 +25,7 @@ class Service
 
     public function getServiceDate()
     {
-        return $this->date;
+        return date("d-m-Y", strtotime($this->date));
     }
 
 }
